@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "PromoHUB SGO - API REST",
       description:
         "Sistema centralizado para la gestión de promociones financieras. API construida bajo el patrón MVC y N-Capas, integrando paginación, filtros dinámicos y persistencia en base de datos.",
-      images: ["img/PromoHub/promohub.png"],
+      images: ["img/PromoHub/promohub.PNG"],
       // Refactor: Array de objetos con nombre y categoría
       technologies: [
         { name: "Java", category: "backend" },
