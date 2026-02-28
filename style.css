@@ -1,0 +1,717 @@
+/* Variables globales */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; 
+}
+:root {
+  --color-texto: #e7e7e7; /* gris */
+  --color-fondo: #0d0d0d; /* negro */
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: "Roboto Mono", monospace;
+  padding: 50px;
+}
+
+/* ESTRUCTURA PRINCIPAL */
+.marco-portafolio {
+  display: flex;
+  flex-direction: column;
+  min-height: 88vh;
+  padding: 20px;
+  border: 2px solid var(--color-texto);
+  justify-content: space-between;
+}
+
+.paneles-superiores {
+  display: flex;
+}
+/* panel izquierdo */
+.panel-izquierdo {
+  width: 27%;
+}
+
+.cabecera-perfil {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid var(--color-texto);
+  padding-bottom: 10px;
+}
+.nombre-efecmaquina {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid transparent; /* El cursor que titila */
+  padding-right: 1px;
+  width: 25ch;
+  font-size: 32px;
+  animation:
+    typing 1.8s steps(25) forwards,
+    blink 0.5s infinite step-end alternate;
+}
+/* Fotogramas de la animación */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 24ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: var(--color-texto);
+  }
+}
+
+.subtitulo-rol {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.seccion-redes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+.seccion-redes h3 {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.iconos-redes {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  gap: 10px;
+  font-size: 50px;
+  margin-top: 20px;
+}
+.iconos-redes a {
+  color: var(--color-texto);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.iconos-redes a:hover {
+  transform: scale(1.1);
+}
+.iconos-redes a:hover .devicon-linkedin-plain{
+    color: #0A66C2;
+}
+.iconos-redes a:hover .devicon-github-original{
+    color: #b8b8b8;
+}
+.seccion-cv {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.boton-cv {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: transparent;
+  color: var(--color-texto);
+  border: 1px solid var(--color-texto);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.boton-cv:hover {
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  font-weight: bold;
+  box-shadow: 0px 0px 15px rgba(231, 231, 231, 0.3);
+}
+
+/* panel derecho */
+.panel-derecho {
+  width: 71%;
+}
+.vista-oculta {
+  display: none;
+}
+.vista-activa {
+  display: block;
+  animation: aparecerSuave 0.4s ease-out forwards;
+}
+@keyframes aparecerSuave {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.contenedor-sobre-mi {
+  width: 100%;
+  margin-left: 25px;
+  line-height: 1.6;
+  text-align: justify;
+}
+.contenedor-sobre-mi p {
+  font-size: 18px;
+}
+.contenedor-skills {
+  margin-top: 40px;
+}
+
+.subtitulo-skills {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+  display: inline-block;
+  color: var(--color-texto);
+}
+
+.grilla-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border: 1px solid #333; /* Borde sutil oscuro */
+  border-radius: 8px;
+  color: var(--color-texto);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.skill-item i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.skill-item span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Efecto hover: se levanta la tarjeta y el ícono toma su color original */
+.skill-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-texto);
+  box-shadow: 0px 5px 15px rgba(231, 231, 231, 0.1);
+}
+
+.skill-item:hover .devicon-java-plain { color: #f89820; }
+.skill-item:hover .devicon-spring-original { color: #6db33f; }
+.skill-item:hover .devicon-python-plain { color: #3776ab; }
+.skill-item:hover .devicon-mysql-plain { color: #00758f; }
+.skill-item:hover .devicon-git-plain { color: #f34f29; }
+.skill-item:hover .devicon-docker-plain { color: #2496ed; }
+.skill-item:hover .devicon-postgresql-plain { color: #336791; }
+/* menu */
+.navegacion-inferior {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.lista-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.item-menu {
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--color-texto);
+  transition: color 0.5s;
+}
+
+.item-menu:hover {
+  color: #888888;
+}
+.activo {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* Proyectos */
+.contenedor-proyectos {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 75vh;
+
+  /* barra de scroll */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-texto) var(--color-fondo);
+
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+/* la barra de scroll (Chrome/Edge/Safari) */
+.contenedor-proyectos::-webkit-scrollbar {
+  width: 8px;
+}
+.contenedor-proyectos::-webkit-scrollbar-track {
+  background: var(--color-fondo);
+  border-radius: 10px;
+}
+.contenedor-proyectos::-webkit-scrollbar-thumb {
+  background-color: var(--color-texto);
+  border-radius: 10px;
+}
+
+.subtitulo-seccion {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.galeria-proyectos {
+  display: flex;
+  width: 100%;
+  justify-content:space-evenly ;
+  flex-wrap: wrap;
+}
+/* tarjetas */
+.tarjeta-proyecto {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 530px;
+  box-sizing: border-box;
+  padding: 15px 10px;
+  color: var(--color-texto);
+  border: 1px solid var(--color-texto);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.tarjeta-proyecto:hover {
+  font-size: 18px;  
+  font-weight: 500;
+  box-shadow: 0px 0px 25px rgba(231, 231, 231, 0.4);
+}
+.tarjeta-descripcion {
+  font-size: 16px;
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.tarjeta-imagen-contenedor {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+.tarjeta-imagen-contenedor img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* Pop-up proyectos */
+.modal-fondo-oscuro {
+  display: none; /* Oculto por defecto. JS lo cambiará a 'flex' al hacer clic */
+  position: fixed;
+  z-index: 1000; /* Asegura que esté por encima de todo el portafolio */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-cuadro-gigante {
+  display: flex;
+  background-color: rgb(184, 184, 184);
+  color: var(--color-fondo); /* Letra oscura */
+  width: 95%;
+  max-width: 1300px;
+  min-height: 500px;
+  padding: 30px;
+  gap: 20px; /* Separación de 40px entre el texto y la foto */
+  border-radius: 8px;
+  box-shadow: 0px 0px 35px rgba(231, 231, 231, 0.4);
+  position: relative;
+}
+
+/* Columna Izquierda */
+.modal-columna-texto {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-titulo {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.modal-descripcion {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modal-tecnologias {
+  margin-top: 10px;
+}
+.modal-tecnologias p {
+  font-weight: bold;
+}
+.modal-tecnologias ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.modal-enlace {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.modal-enlace a {
+  color: var(--color-fondo);
+}
+
+/* Columna Derecha: Imagen */
+.modal-columna-imagen {
+  width: 70%;
+  position: relative;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 60px; /* 'Pasillos' vacíos a los costados para las flechas */
+}
+
+.modal-columna-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Achica la imagen sin deformarla */
+}
+.modal-tecnologias-titulo {
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.contenedor-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.badge-tech {
+  background-color: #1a1a1a; /* Fondo oscuro sutil */
+  color: #e7e7e7;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* Efecto hover suave */
+.badge-tech:hover {
+  background-color: #2a2a2a;
+  transform: translateY(-2px);
+}
+
+/* Categorías: Borde izquierdo coloreado para identificar el tipo de tech */
+.badge-backend {
+  border-left: 3px solid #6db33f; /* Verde Spring */
+}
+
+.badge-database {
+  border-left: 3px solid #00758f; /* Azul MySQL */
+}
+
+.badge-automation {
+  border-left: 3px solid #f89820; /* Naranja/Amarillo Python */
+}
+
+.badge-tool {
+  border-left: 3px solid #b8b8b8; /* Gris neutral */
+}
+.badge-frontend {
+  border-left: 3px solid #61dafb;
+}
+/* Botones de las flechas (Los inyectará JS)*/
+.boton-slider {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--color-fondo); /* Flecha oscura */
+  border: none;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 10;
+  transition:
+    transform 0.3s,
+    color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-slider span {
+  font-size: 45px;
+  line-height: 1;
+}
+.boton-slider:hover {
+  color: #555;
+  transform: translateY(-50%) scale(1.15);
+}
+.flecha-izq {
+  left: 0px;
+}
+.flecha-der {
+  right: 0px;
+}
+
+/* formulario */
+.contenedor-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contenedor-contacto h3 {
+  margin-top: 25px;
+  font-weight: 400;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los textos (labels) a la izquierda */
+  width: 100%;
+  max-width: 450px;
+  margin: 30px auto 0 auto; /* El 'auto' a los lados centra todo el bloque */
+}
+
+.formulario label {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* Cajas donde el usuario escribe */
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: transparent; /* Quita el fondo blanco por defecto */
+  border: 1px solid var(--color-texto);
+  color: var(--color-texto);
+  font-family: inherit; /* Usa la misma letra Roboto Mono */
+  outline: none; /* Quita el borde azul molesto al hacer clic */
+}
+
+.formulario input {
+  height: 20px;
+}
+.formulario textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Efecto sutil al seleccionar una caja para escribir */
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: #a7d3e7; /* Un tono celeste suave */
+}
+
+.boton-enviar {
+  align-self: center; /* Centra el botón debajo de todo */
+  padding: 12px 40px;
+  margin-top: 10px;
+  background-color: transparent;
+  color: var(--color-texto);
+  border: 1px solid var(--color-texto);
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.boton-enviar:hover {
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+}
+
+/* responsive (celular)*/
+@media (max-width: 800px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .marco-portafolio {
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .paneles-superiores {
+    flex-direction: column;
+  }
+
+  .panel-izquierdo{
+    width: 100%;
+  }
+  .panel-derecho{
+    width: 95%;
+  }
+
+  .cabecera-perfil {
+    text-align: center;
+    align-items: center;
+  }
+
+  .nombre-efecmaquina {
+    animation: none;          
+    white-space: normal;      
+    width: 100%;              
+    border-right: none;       
+    font-size: 22px;          
+  }
+
+  .subtitulo-rol {
+    font-size: 20px;
+  }
+
+  .iconos-redes {
+    width: 100%;
+    font-size: 40px;
+  }
+
+  .contenedor-sobre-mi {
+    margin-top: 25px;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .contenedor-sobre-mi p {
+    font-size: 16px;
+  }
+
+  .contenedor-proyectos {
+    max-height: none;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .tarjeta-proyecto {
+    width: 100%;
+  }
+
+  .tarjeta-imagen-contenedor img {
+    max-height: 200px;
+  }
+
+  .subtitulo-seccion {
+    font-size: 24px;
+  }
+
+  .modal-cuadro-gigante {
+    flex-direction: column;
+    width: 95%;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-columna-texto {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-columna-imagen {
+    width: 100%;
+    height: 35vh;
+    padding: 0 20px;
+  }
+
+  .modal-columna-imagen img {
+    max-height: 100%;
+  }
+
+
+  .formulario {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.formulario label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box; 
+}
+
+.formulario textarea {
+  resize: vertical; 
+}
+
+.boton-enviar {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}
+
+  .lista-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .item-menu {
+    font-size: 16px;
+  }
+  .subtitulo-skills {
+    display: block;
+    text-align: center;
+  }
+  
+  .grilla-skills {
+    justify-content: center;
+  }
+}

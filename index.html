@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agustín Figueroa | Backend Developer</title>
+
+    <!-- IMPORTACIONES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="marco-portafolio">
+      <section class="paneles-superiores">
+        <aside class="panel-izquierdo">
+          <header class="cabecera-perfil">
+            <h1 class="nombre-efecmaquina">Agustín Eduardo Figueroa</h1>
+            <h2 class="subtitulo-rol">Backend Developer & Data</h2>
+          </header>
+          <div class="seccion-redes">
+            <h3>Visita mis redes sociales para más contenido</h3>
+            <div class="iconos-redes">
+              <a
+                href="https://www.linkedin.com/in/agustinfigueroa390/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="devicon-linkedin-plain"></i
+              ></a>
+              <a
+                href="https://github.com/AFigueroaAgustin"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="devicon-github-original"></i
+              ></a>
+            </div>
+          </div>
+          </div> <div class="seccion-cv">
+            <a href="docs/CV_Agustin_Figueroa.pdf" download="CV_Agustin_Figueroa.pdf" class="boton-cv">
+              Descargar CV
+            </a>
+          </div>
+        </aside>
+        <section class="panel-derecho">
+          <article id="vista-inicio" class="vista-activa">
+            <div class="contenedor-sobre-mi">
+              <p>
+                Desarrollador Backend de Santiago del Estero, Argentina.
+                Estudiante de la carrera de Sistemas en la UNSE y de la
+                tecnicatura en Data Science e IA. Tengo un sólido dominio en
+                Java y Spring Boot para la creación de APIs REST robustas,
+                sumado a experiencia en Python para automatización y web
+                scraping. Me apasiona la arquitectura de software, la
+                optimización de bases de datos relacionales y el diseño de
+                sistemas eficientes.
+              </p>
+              <div class="contenedor-skills">
+              <h3 class="subtitulo-skills">Stack Tecnológico</h3>
+              <div class="grilla-skills">
+                
+                <div class="skill-item">
+                  <i class="devicon-java-plain"></i>
+                  <span>Java</span>
+                </div>
+                
+                <div class="skill-item">
+                  <i class="devicon-spring-original"></i>
+                  <span>Spring</span>
+                </div>
+                
+                <div class="skill-item">
+                  <i class="devicon-python-plain"></i>
+                  <span>Python</span>
+                </div>
+                
+                <div class="skill-item">
+                  <i class="devicon-mysql-plain"></i>
+                  <span>MySQL</span>
+                </div>
+
+                <div class="skill-item">
+                  <i class="devicon-git-plain"></i>
+                  <span>Git</span>
+                </div>
+                <div class="skill-item">
+                  <i class="devicon-docker-plain"></i>
+                  <span>Docker</span>
+                </div>
+
+                <div class="skill-item">
+                  <i class="devicon-postgresql-plain"></i>
+                  <span>PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </article>
+          <article id="vista-proyectos" class="vista-oculta">
+            <div class="contenedor-proyectos">
+              <h2 class="subtitulo-seccion">Proyectos</h2>
+              <div id="galeria-proyectos" class="galeria-proyectos"></div>
+            </div>
+          </article>
+
+          <article id="vista-contacto" class="vista-oculta">
+            <div class="contenedor-contacto">
+              <h2 class="subtitulo-seccion">Contacto</h2>
+              <h3>Completa el formulario y te responderé a la brevedad</h3>
+
+              <form id="formulario-contacto" class="formulario">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="subject">Asunto</label>
+                <input type="text" id="subject" name="subject" required />
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="boton-enviar">Enviar</button>
+              </form>
+            </div>
+          </article>
+        </section>
+      </section>
+      <nav class="navegacion-inferior">
+        <ul class="lista-menu">
+          <li data-target="vista-inicio" class="item-menu activo">Home</li>
+          <li data-target="vista-proyectos" class="item-menu">Proyectos</li>
+          <li data-target="vista-contacto" class="item-menu">Contacto</li>
+        </ul>
+      </nav>
+    </main>
+    <!-- Proyectos Pop-up -->
+    <div id="modal-proyecto" class="modal-fondo-oscuro">
+      <div class="modal-cuadro-gigante">
+        <div class="modal-columna-texto">
+          <h2 class="modal-titulo">Título</h2>
+          <p class="modal-descripcion">Descripción</p>
+          <div class="modal-tecnologias"></div>
+          <div class="modal-enlace"></div>
+        </div>
+        <div class="modal-columna-imagen"></div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        emailjs.init("aHOEG4GdcttlnrOKu");
+      })();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
