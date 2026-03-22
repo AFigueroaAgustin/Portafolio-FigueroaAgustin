@@ -68,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalEnlace = document.querySelector(".modal-enlace");
   const modalColumnaImagen = document.querySelector(".modal-columna-imagen");
 
-  // 1. EL NUEVO ARREGLO DE PROYECTOS (Datos limpios, sin HTML)
+  // EL NUEVO ARREGLO DE PROYECTOS (Datos limpios, sin HTML)
   const misProyectos = [
     {
       title: "PromoHUB SGO - API REST",
       description:
         "Sistema centralizado para la gestión de promociones financieras. API construida bajo el patrón MVC y N-Capas, integrando paginación, filtros dinámicos y persistencia en base de datos.",
       images: ["img/PromoHub/PromoHub.PNG"],
-      // Refactor: Array de objetos con nombre y categoría
+      // Array de objetos con nombre y categoría
       technologies: [
         { name: "Java", category: "backend" },
         { name: "Spring Boot", category: "backend" },
@@ -141,22 +141,22 @@ document.addEventListener("DOMContentLoaded", () => {
         modalDescripcion.textContent = proyecto.description;
         modalEnlace.innerHTML = proyecto.link;
 
-        // --- INICIO REFACTORIZACIÓN DE TECNOLOGÍAS ---
+        //  INICIO REFACTORIZACIÓN DE TECNOLOGÍAS 
         
-        // 1. Limpiamos el contenedor (único uso válido de innerHTML aquí)
+        // Limpiamos el contenedor (único uso válido de innerHTML aquí)
         modalTecnologias.innerHTML = ""; 
 
-        // 2. Creamos el título
+        // Creamos el título
         const tituloTech = document.createElement("p");
         tituloTech.textContent = "Tecnologías empleadas:";
         tituloTech.classList.add("modal-tecnologias-titulo");
         modalTecnologias.appendChild(tituloTech);
 
-        // 3. Creamos el contenedor de las badges
+        //  Creamos el contenedor de las badges
         const contenedorBadges = document.createElement("div");
         contenedorBadges.classList.add("contenedor-badges");
 
-        // 4. Iteramos sobre el array limpio e inyectamos nodos dinámicamente
+        // Iteramos sobre el array limpio e inyectamos nodos dinámicamente
         proyecto.technologies.forEach(tech => {
           const badge = document.createElement("span");
           badge.textContent = tech.name;
@@ -168,10 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         modalTecnologias.appendChild(contenedorBadges);
         
-        // --- FIN REFACTORIZACIÓN DE TECNOLOGÍAS ---
+        // FIN REFACTORIZACIÓN DE TECNOLOGÍAS 
 
-
-        // (El código del slider se mantiene exactamente igual a partir de aquí)
         let htmlImagenes = proyecto.images
           .map((rutaImg, indice) => {
             const mostrar = indice === 0 ? "block" : "none";
