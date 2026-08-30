@@ -68,14 +68,10 @@
           <article id="vista-inicio" class="vista-activa">
             <div class="contenedor-sobre-mi">
               <p>
-                Desarrollador Backend de Santiago del Estero, Argentina.
-                Estudiante de la carrera de Sistemas en la UNSE y de la
-                tecnicatura en Data Science e IA. Tengo un sólido dominio en
-                Java y Spring Boot para la creación de APIs REST robustas,
-                sumado a experiencia en Python para automatización y web
-                scraping. Me apasiona la arquitectura de software, la
-                optimización de bases de datos relacionales y el diseño de
-                sistemas eficientes.
+                Desarrollador Backend radicado en Santiago del Estero, Argentina.
+                Estudiante de la carrera de Sistemas (UNSE) y de la tecnicatura en Data Science e IA.
+                Especializado en el ecosistema <strong>Java 17 y Spring Boot 3</strong> para la construcción de APIs REST robustas y documentadas bajo el estándar <strong>OpenAPI / Swagger</strong>, complementado con <strong>Python</strong> para automatización y pipelines de web scraping (ETL).
+                Apasionado por la arquitectura en capas, el diseño relacional normalizado (3NF) en <strong>MySQL y PostgreSQL</strong>, la validación de datos con <strong>Jakarta</strong> y el desacoplamiento mediante DTOs.
               </p>
               <div class="contenedor-skills">
               <h3 class="subtitulo-skills">Stack Tecnológico</h3>
@@ -88,7 +84,12 @@
                 
                 <div class="skill-item">
                   <i class="devicon-spring-original"></i>
-                  <span>Spring</span>
+                  <span>Spring Boot</span>
+                </div>
+
+                <div class="skill-item">
+                  <i class="devicon-swagger-plain"></i>
+                  <span>Swagger</span>
                 </div>
                 
                 <div class="skill-item">
@@ -102,24 +103,34 @@
                 </div>
 
                 <div class="skill-item">
-                  <i class="devicon-git-plain"></i>
-                  <span>Git</span>
+                  <i class="devicon-postgresql-plain"></i>
+                  <span>PostgreSQL</span>
                 </div>
+
                 <div class="skill-item">
                   <i class="devicon-docker-plain"></i>
                   <span>Docker</span>
                 </div>
 
                 <div class="skill-item">
-                  <i class="devicon-postgresql-plain"></i>
-                  <span>PostgreSQL</span>
+                  <i class="devicon-git-plain"></i>
+                  <span>Git</span>
+                </div>
+
+                <div class="skill-item">
+                  <i class="devicon-postman-plain"></i>
+                  <span>Postman</span>
+                </div>
+
+                <div class="skill-item">
+                  <i class="devicon-linux-plain"></i>
+                  <span>Linux</span>
                 </div>
               </div>
             </div>
           </div>
-            </div>
-          </article>
-          <article id="vista-proyectos" class="vista-oculta">
+        </article>
+        <article id="vista-proyectos" class="vista-oculta">
             <div class="contenedor-proyectos">
               <h2 class="subtitulo-seccion">Proyectos</h2>
               <div id="galeria-proyectos" class="galeria-proyectos"></div>
@@ -206,18 +217,22 @@
           </article>
         </section>
       </section>
-      <nav class="navegacion-inferior">
-        <ul class="lista-menu">
-          <li data-target="vista-inicio" class="item-menu activo">Home</li>
-          <li data-target="vista-proyectos" class="item-menu">Proyectos</li>
-          <li data-target="vista-certificaciones" class="item-menu">Certificaciones</li>
-          <li data-target="vista-contacto" class="item-menu">Contacto</li>
-        </ul>
-      </nav>
+      <footer class="pie-portafolio">
+        <nav class="navegacion-inferior">
+          <ul class="lista-menu">
+            <li data-target="vista-inicio" class="item-menu activo">Home</li>
+            <li data-target="vista-proyectos" class="item-menu">Proyectos</li>
+            <li data-target="vista-certificaciones" class="item-menu">Certificaciones</li>
+            <li data-target="vista-contacto" class="item-menu">Contacto</li>
+          </ul>
+        </nav>
+        <p class="copyright-texto">© 2026 Agustín Figueroa · Desarrollador Backend · Todos los derechos reservados</p>
+      </footer>
     </main>
     <!-- Proyectos Pop-up -->
     <div id="modal-proyecto" class="modal-fondo-oscuro">
       <div class="modal-cuadro-gigante">
+        <button id="modal-boton-cerrar" class="modal-boton-cerrar" aria-label="Cerrar ventana">&times;</button>
         <div class="modal-columna-texto">
           <h2 class="modal-titulo">Título</h2>
           <p class="modal-descripcion">Descripción</p>

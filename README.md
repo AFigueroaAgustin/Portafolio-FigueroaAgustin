@@ -18,9 +18,9 @@ Aunque este repositorio es frontend, mi stack principal de trabajo diario incluy
 * **Herramientas & DevOps:** Docker, Git.
 
 ## 📂 Proyectos Principales (Visibles en el Portafolio)
-* **PromoHUB SGO:** API REST construida bajo el patrón MVC y N-Capas para gestión de promociones bancarias.
-* **Sistema de Punto de Venta (POS):** Aplicación de escritorio comercial en Java Swing con control de stock y reportes.
-* **Data Pipeline:** Motor de web scraping con Python para extracción de datos financieros.
+* **Punto Promo SGO:** Plataforma web y API REST construida bajo arquitectura en capas para centralización y consulta de promociones bancarias.
+* **Data Pipeline Multi-Fuente:** Motor de web scraping y pipeline ETL en Python para ingesta automatizada.
+* **Sistema de Punto de Venta (POS):** Aplicación comercial en Java con persistencia relacional y reportes.
 
 ## 📩 Contacto
 * [LinkedIn](https://www.linkedin.com/in/agustinfigueroa390/)
