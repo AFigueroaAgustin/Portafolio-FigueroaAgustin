@@ -4,8 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agustín Figueroa | Backend Developer</title>
+    <meta name="description" content="Portafolio de Agustín Eduardo Figueroa, Desarrollador Backend especializado en Java 17, Spring Boot, MySQL y Pipelines ETL en Python." />
+    <meta name="author" content="Agustín Eduardo Figueroa" />
+    <link rel="canonical" href="https://afigueroaagustin.github.io/Portafolio-FigueroaAgustin/" />
 
-    <!-- IMPORTACIONES -->
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Agustín Figueroa | Backend Developer" />
+    <meta property="og:description" content="Desarrollador Backend Java & Spring Boot. APIs REST escalables, arquitectura en capas, MySQL y pipelines de datos en Python." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://afigueroaagustin.github.io/Portafolio-FigueroaAgustin/" />
+    <meta property="og:image" content="https://afigueroaagustin.github.io/Portafolio-FigueroaAgustin/img/PromoHub/swagger_general.png" />
+
+    <!-- Favicon nativo SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>" />
+
+    <!-- Datos estructurados de Google (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Agustín Eduardo Figueroa",
+      "jobTitle": "Backend Java Developer",
+      "url": "https://afigueroaagustin.github.io/Portafolio-FigueroaAgustin/",
+      "sameAs": [
+        "https://www.linkedin.com/in/agustinfigueroa390/",
+        "https://github.com/AFigueroaAgustin"
+      ],
+      "knowsAbout": ["Java", "Spring Boot", "MySQL", "OpenAPI", "Python", "Docker"]
+    }
+    </script>
+
+    <!-- Fuentes e Iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,13 +53,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-
-    <link rel="stylesheet" href="style.css?v=2026.5" />
+    <link rel="stylesheet" href="style.css?v=2026.6" />
   </head>
   <body>
     <main class="marco-portafolio">
@@ -47,6 +70,7 @@
                 href="https://www.linkedin.com/in/agustinfigueroa390/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Perfil de LinkedIn de Agustín Figueroa"
               >
                 <i class="devicon-linkedin-plain"></i
               ></a>
@@ -54,6 +78,7 @@
                 href="https://github.com/AFigueroaAgustin"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Perfil de GitHub de Agustín Figueroa"
                 ><i class="devicon-github-original"></i
               ></a>
             </div>
@@ -209,10 +234,10 @@
 
               <form id="formulario-contacto" class="formulario">
                 <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required />
+                <input type="text" id="name" name="name" autocomplete="name" required />
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
+                <input type="email" id="email" name="email" autocomplete="email" required />
 
                 <label for="subject">Asunto</label>
                 <input type="text" id="subject" name="subject" required />
@@ -239,11 +264,11 @@
       </footer>
     </main>
     <!-- Proyectos Pop-up -->
-    <div id="modal-proyecto" class="modal-fondo-oscuro">
+    <div id="modal-proyecto" class="modal-fondo-oscuro" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
       <div class="modal-cuadro-gigante">
         <button id="modal-boton-cerrar" class="modal-boton-cerrar" aria-label="Cerrar ventana">&times;</button>
         <div class="modal-columna-texto">
-          <h2 class="modal-titulo">Título</h2>
+          <h2 id="modal-titulo" class="modal-titulo">Título</h2>
           <p class="modal-descripcion">Descripción</p>
           <div class="modal-tecnologias"></div>
           <div class="modal-enlace"></div>
@@ -251,11 +276,21 @@
         <div class="modal-columna-imagen"></div>
       </div>
     </div>
+
+    <!-- Scripts externos con defer para no bloquear el renderizado -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      defer
+    ></script>
     <script>
-      (function () {
-        emailjs.init("aHOEG4GdcttlnrOKu");
-      })();
+      window.addEventListener("DOMContentLoaded", function () {
+        if (typeof emailjs !== "undefined") {
+          emailjs.init("aHOEG4GdcttlnrOKu");
+        }
+      });
     </script>
-    <script src="script.js?v=2026.5"></script>
+    <script src="script.js?v=2026.6" defer></script>
   </body>
 </html>

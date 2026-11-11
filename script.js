@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <p class="tarjeta-descripcion">${proyecto.description}</p>
                 <div class="tarjeta-imagen-contenedor">
-                    <img src="${imagenPortada}" alt="Captura de ${proyecto.title}" onerror="this.style.display='none'">
+                    <img src="${imagenPortada}" alt="Captura de ${proyecto.title}" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 </div>
             `;
 
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         Tu navegador no soporta reproducción de video.
                       </video>`;
             } else {
-              return `<img class="img-slider" src="${ruta}" alt="Captura ${indice + 1}" style="display: ${mostrar};">`;
+              return `<img class="img-slider" src="${ruta}" alt="Captura ${indice + 1}" loading="lazy" decoding="async" style="display: ${mostrar};">`;
             }
           })
           .join("");
