@@ -73,6 +73,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // ARREGLO DE PROYECTOS CON FOTOS, CAPTIONS Y METADATOS TÉCNICOS
   const misProyectos = [
     {
+      title: "SgoServis: Red de servicios técnicos",
+      inDevelopment: true,
+      statusBadge: "En desarrollo",
+      description:
+        "Plataforma para la conexión ágil y confiable entre clientes y prestadores de servicios técnicos y oficios en Santiago del Estero. Diseñada bajo arquitectura de Monolito Modular (Package by Feature) en Java 25 y Spring Boot 4+, con autenticación híbrida (Google OAuth2 + JWT Stateless), validación de matrículas obligatorias (gasistas/técnicos), reputación auditada en calidad y puntualidad, y enlace directo a WhatsApp sin fricciones.",
+      images: [
+        {
+          url: "img/SgoServis/cover_sgoservis.svg",
+          caption: "Arquitectura y Concepto de SgoServis: Plataforma de oficios técnicos y profesionales con validación de matrículas oficiales, reputación auditada y facilitador de contacto directo por WhatsApp."
+        }
+      ],
+      technologies: [
+        { name: "Java 25 (LTS)", category: "backend" },
+        { name: "Spring Boot 4+", category: "backend" },
+        { name: "Spring Security (OAuth2 / JWT)", category: "backend" },
+        { name: "Monolito Modular", category: "backend" },
+        { name: "MySQL / Hibernate", category: "database" },
+        { name: "Angular 22", category: "frontend" },
+        { name: "Tailwind CSS & DaisyUI", category: "frontend" },
+        { name: "Leaflet (Geolocalización)", category: "tool" }
+      ],
+      link: `<span class="boton-en-desarrollo"><span class="punto-pulso"></span> En desarrollo activo · Pronto a lanzarse</span>`,
+    },
+    {
       title: "Punto Promo SGO - API REST & Ecosistema Web",
       description:
         "Plataforma web y API REST para la centralización y consulta de promociones bancarias y beneficios comerciales en Santiago del Estero. Diseñada bajo arquitectura en capas con persistencia en MySQL (3NF), soporte para filtrado dinámico con paginación, validaciones con Jakarta y documentación interactiva con OpenAPI 3 / Swagger.",
@@ -163,6 +187,9 @@ document.addEventListener("DOMContentLoaded", () => {
     misProyectos.forEach((proyecto) => {
       const tarjeta = document.createElement("div");
       tarjeta.classList.add("tarjeta-proyecto");
+      if (proyecto.inDevelopment) {
+        tarjeta.classList.add("en-desarrollo");
+      }
 
       // Si el primer elemento es un video, usamos la siguiente imagen disponible como portada de la tarjeta
       let imagenPortada = "";
@@ -179,8 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
         imagenPortada = typeof proyecto.images[0] === 'object' ? proyecto.images[0].url : proyecto.images[0];
       }
 
+      const badgeHTML = proyecto.statusBadge
+        ? `<span class="badge-en-desarrollo"><span class="punto-pulso"></span>${proyecto.statusBadge}</span>`
+        : "";
+
       tarjeta.innerHTML = `
-                <h3 class="tarjeta-titulo">${proyecto.title}</h3>
+                <div class="tarjeta-cabecera">
+                    <h3 class="tarjeta-titulo">${proyecto.title}</h3>
+                    ${badgeHTML}
+                </div>
                 <p class="tarjeta-descripcion">${proyecto.description}</p>
                 <div class="tarjeta-imagen-contenedor">
                     <img src="${imagenPortada}" alt="Captura de ${proyecto.title}" onerror="this.style.display='none'">

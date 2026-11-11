@@ -18,6 +18,7 @@ Aunque este repositorio es frontend, mi stack principal de trabajo diario incluy
 * **Herramientas & DevOps:** Docker, Git.
 
 ## 📂 Proyectos Principales (Visibles en el Portafolio)
+* **SgoServis (En desarrollo):** Plataforma para conexión de servicios técnicos y oficios en Santiago del Estero. Diseñada con Monolito Modular en Java 25, Spring Boot, Spring Security (JWT + OAuth2) y Angular 22.
 * **Punto Promo SGO:** Plataforma web y API REST construida bajo arquitectura en capas para centralización y consulta de promociones bancarias.
 * **Data Pipeline Multi-Fuente:** Motor de web scraping y pipeline ETL en Python para ingesta automatizada.
 * **Sistema de Punto de Venta (POS):** Aplicación comercial en Java con persistencia relacional y reportes.
