@@ -102,6 +102,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Plataforma web y API REST para la centralización y consulta de promociones bancarias y beneficios comerciales en Santiago del Estero. Diseñada bajo arquitectura en capas con persistencia en MySQL (3NF), soporte para filtrado dinámico con paginación, validaciones con Jakarta y documentación interactiva con OpenAPI 3 / Swagger.",
       images: [
         {
+          url: "img/PromoHub/Punto promo SGO.PNG",
+          caption: "Punto Promo SGO (En vivo): Interfaz web en modo oscuro con buscador de descuentos en tiempo real, selector de bancos y tarjetas locales (Tarjeta Sol, BSE, BNA) y categorías comerciales."
+        },
+        {
           url: "img/PromoHub/demo_promohub.mp4",
           isVideo: true,
           caption: "Demo en video de Punto Promo SGO: Recorrido por la aplicación en vivo, filtrado por entidades locales (BSE, Tarjeta Sol), selección de categorías y motor de búsqueda en acción."
@@ -210,11 +214,20 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<span class="badge-en-desarrollo"><span class="punto-pulso"></span>${proyecto.statusBadge}</span>`
         : "";
 
+      // Generar 3 o 4 chips destacados de tecnologías para la tarjeta
+      const chipsHTML = proyecto.technologies && proyecto.technologies.length > 0
+        ? `<div class="tarjeta-tech-chips">
+            ${proyecto.technologies.slice(0, 3).map(t => `<span class="chip-tech">${t.name}</span>`).join('')}
+            ${proyecto.technologies.length > 3 ? `<span class="chip-tech chip-more">+${proyecto.technologies.length - 3}</span>` : ''}
+          </div>`
+        : '';
+
       tarjeta.innerHTML = `
                 <div class="tarjeta-cabecera">
                     <h3 class="tarjeta-titulo">${proyecto.title}</h3>
                     ${badgeHTML}
                 </div>
+                ${chipsHTML}
                 <p class="tarjeta-descripcion">${proyecto.description}</p>
                 <div class="tarjeta-imagen-contenedor">
                     <img src="${imagenPortada}" alt="Captura de ${proyecto.title}" loading="lazy" decoding="async" onerror="this.style.display='none'">
